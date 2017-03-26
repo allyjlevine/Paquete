@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 60%;
+  /*width: 70%*/
+  margin: 0 auto;
+}
+
+.finder-window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  background-color: #dedede;
+  box-shadow: 0 20px 100px 0px #909090;
+  margin: 1rem auto 0 0rem;
+}
+
+.finder-header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  position: relative;
+  background: -webkit-linear-gradient(#e4e4e4, #cfcfcf);
+  background: linear-gradient(#e4e4e4, #cfcfcf);
+  height: 2rem;
+  border-bottom: 1px solid #969696;
+  box-shadow: inset 0 1px 1px 0px #fff;
+}
+
+.finder-window-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+      flex-flow: row;
+  position: absolute;
+  top: .3rem;
+  left: .3rem;
+}
+
+.finder-window-controls__close,
+.finder-window-controls__minimize,
+.finder-window-controls__maximize {
+  height: .5rem;
+  width: .5rem;
+  border-radius: 99px;
+  margin-right: .28rem;
+  cursor: pointer;
+}
+
+.finder-window-controls__close {
+  background-color: #f85955;
+  border: 1px solid #d74246;
+}
+
+.finder-window-controls__minimize {
+  background-color: #fbbe3f;
+  border: 1px solid #d7a32d;
+}
+
+.finder-window-controls__maximize {
+  background-color: #45cc4b;
+  border: 1px solid #40ad36;
+}
+
+.finder-sidebar {
+  background-color: #f0f0f0;
+  border-right: 1px solid #b8b8b8;
+  padding: 0 .6rem .4rem .4rem;
+}
+
+.finder-sidebar__list {
+  margin: 0;
+  padding: 0;
+}
+
+.finder-sidebar__list-name--section {
+  font-weight: bold;
+  color: #7b807c;
+  font-size: 0.5em;
+}
+
+.finder-sidebar__sub-list {
+  margin: 0;
+  padding: 0 0 0 9px;
+  font-size: .5rem;
+  line-height: .45rem;
+}
+
+.finder-sidebar__list-item {
+  margin: 8px 0;
+  list-style: none;
+}
+
+.finder-sidebar__list-item--section {
+  margin: 0;
+}
+
+.finder-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+      flex-flow: row;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  background-color: #ffffff;
+}
+
+.finder-file-list {
+  margin: 0;
+  padding: .4rem .5rem 1rem .3rem;
+  border-right: 1px solid #e8e8e8;
+}
+
+.finder-file-item {
+  display: block;
+  text-decoration: none;
+  padding: 0.1em 0.5em;
+  cursor: pointer;
+  font-size: .5rem;
+  line-height: .8rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.finder-file-item.is-active {
+  color: #000;
+  background: #dcdcdc;
+}
+
+.finder-file-list.is-active .finder-file-item.is-active {
+  color: #fff;
+  background: #246bd5;
+}
+
+.finder-details {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  height: 24px;
+  border-top: 1px solid #a2a2a2;
+  text-align: center;
+  font-size: 0.7em;
+  line-height: 2;
+}

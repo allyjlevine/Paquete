@@ -1,0 +1,126 @@
+html {
+  font-size: 2vw;
+}
+
+body {
+  margin: 0;
+  background: #89d0d7;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.laptop {
+  width: 50rem;
+  position: relative;
+}
+
+/*camera*/
+.laptop:before {
+  background: #222;
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  top: 0.6rem;
+  left: 22rem;
+  z-index: 1000;
+}
+
+/*bottom shadow*/
+.laptop:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 95%;
+  margin-left: 2.5%;
+  height: 0.75rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5rem;
+}
+
+/*frame*/
+.upper {
+  width: 35rem;
+  height: 23rem;
+  background: #3d4144;
+  border: 2px solid white;
+  border-bottom: none;
+  border-radius: 0.3rem 0.3rem 0 0;
+  margin-left: 5rem;
+  box-shadow: inset 0 0 2px 2px #222;
+  position: relative;
+}
+
+/*screen*/
+.screen {
+  width: 32rem;
+  height: 20rem;
+  background: #a1a1a1;
+  display: block;
+  content: "";
+  top: 1.5rem;
+  left: 1.5rem;
+  position: absolute;
+}
+
+/*screen shadow*/
+.screenshadow {
+  display: block;
+  content: "";
+  position: absolute;
+  border-bottom: 23rem solid rgba(0, 0, 0, 0.075);
+  border-right: 10rem solid transparent;
+  height: 0;
+  width: 50%;
+  border-top-left-radius: 1.5rem;
+}
+
+#finder-content {
+  min-width: 30rem;
+  max-width: 40rem;
+
+  position: absolute;
+}
+
+/*bottom slab*/
+.lower {
+  width: 43rem;
+  height: 1.3rem;
+  background: #eaeaea;
+  border-radius: 2px;
+  position: relative;
+  top: 2.5rem;
+  left: 1rem;
+}
+
+/*lip*/
+.lower:before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 0.5rem;
+  background: #a1a1a1;
+  left: 17rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/*top of bottom slab*/
+.lower:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 81.8%;
+  height: rem;
+  background: transparent;
+  top: -2.5rem;
+  left: 0.1rem;
+  border-bottom: 2.5rem solid black;
+  border-right: 3.9rem solid transparent;
+  border-left: 3.9rem solid transparent;
+}
