@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Note</title>
+  <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+.sticky {
+  background: linear-gradient(#FEFCAF, #FFFEDA);
+  padding: 5px 20px 10px 20px;
+  width: 13rem;
+  margin: 30px auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	border-radius: 2% / 50%;
+  position: relative;
+  font: 13px "Roboto", Serif;
+  line-height: 1.3rem;
+  letter-spacing: .009rem;
+}
+
+.sticky h1 {
+   font-family: 'Montserrat';
+   color: #eb2626;
+}
+
+.sticky:before,
+.sticky:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  width: 70%;
+  max-width: 300px;
+  max-height: 100px;
+  height: 55%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: skew(-15deg) rotate(-6deg);
+}
+
+.sticky:after {
+  left: auto;
+  right: 20px;
+  transform: skew(15deg) rotate(6deg);
+}
+    </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+  <div class="sticky">
+  <h1>Sticky Note</h1>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+<div>
+
+
+</body>
+</html>

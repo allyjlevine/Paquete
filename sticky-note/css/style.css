@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+.sticky {
+  background: linear-gradient(#FEFCAF, #FFFEDA);
+  padding: 5px 20px 10px 20px;
+  width: 13rem;
+  margin: 30px auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	border-radius: 2% / 50%;
+  position: relative;
+  font: 13px "Lucida Grande", Serif;
+  line-height: 1.3rem;
+  letter-spacing: .009rem;
+}
+
+.sticky h1 {
+   font-family: 'Permanent Marker', cursive;
+   color: #eb2626;
+}
+
+.sticky:before,
+.sticky:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  width: 70%;
+  max-width: 300px;
+  max-height: 100px;
+  height: 55%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: skew(-15deg) rotate(-6deg);
+}
+
+.sticky:after {
+  left: auto;
+  right: 20px;
+  transform: skew(15deg) rotate(6deg);
+}
