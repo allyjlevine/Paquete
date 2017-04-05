@@ -1,21 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>WIP Finder</title>
 
-  <script src="https://unpkg.com/react@latest/dist/react.js"></script>
-  <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  <script src="js/treetest.js"></script>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
 
-  <div id="container">
-  <!-- This element's contents will be replaced with your component. -->
-</div>
+    <div class="container" id="vue-root">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>A JSON Tree View Component in Vue.js</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>
+          Simple JSON <small>opened until depth of 7</small>
+          </h2>
+          <div class="well">
+            <tree-view :data="sampleData" max-depth="7"></tree-view>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>
+            Complicated JSON <small>opened until depth of 3</small>
+          </h2>
+          <div class="well">
+            <tree-view :data="sampleData1" max-depth="3"></tree-view>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <script src="js/vue@2.2.6.js"></script>
+    <script src="js/treetest.js"></script>
+
+    
 
 
 </body>
-</html>

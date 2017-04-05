@@ -1,70 +1,89 @@
-function FileList() {
-  this.finderFileListElements = document.getElementsByClassName('finder-file-list');
-  this.bindInteractions();
-}
+$(document).ready(function(){
+    // hide on subcategories and files on load
+    $("#sub-apps").hide();
+    $("#files-apps").hide();
+    $("#sub-music").hide();
+    $("#files-music").hide();
+    $("#files-musicvids").hide();
+    $("#sub-series").hide();
+    $("#files-series").hide();
+    $("#sub-sport").hide();
+    $("#files-sport").hide();
+    $("#sub-tube").hide();
+    $("#files-tube").hide();
 
-FileList.prototype.bindInteractions = function() {
-  var that = this;
 
-  for (var i = 0; i < this.finderFileListElements.length; i++) {
-    this.finderFileListElements[i].addEventListener('mouseup', function(e) {
-      var clickedElement = e.target;
-      var parentElement = clickedElement.parentNode;
-      var childElements = parentElement.children;
-      var modifierKey = e.metaKey || e.shiftKey || e.ctrlKey;
 
-      if (!modifierKey) {
-        for (var i = 0; i < childElements.length; i++) {
-          childElements[i].classList.remove('is-active');
-        }
-      }
 
-      if (!e.shiftKey && !clickedElement.classList.contains('is-active') || e.metaKey) {
-        clickedElement.classList.toggle('is-active');
-      }
+    //click Applications, hide others
+    $("#applications").click(function(){
+      $(this).addClass("active");
+      $("#music, #series, #sports, #youtube").removeClass("active");
+      $("#sub-apps").show();
+      $("#sub-music, #files-music, #files-musicvids, #sub-series, #files-series, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
     });
-  }
 
-  for (var j = 0; j < this.finderFileListElements.length; j++) {
-    this.finderFileListElements[j].addEventListener('mousedown', function(e) {
-      var clickedElement = e.target;
-      var parentElement = clickedElement.parentNode;
-      var childElements = parentElement.children;
-      var clickedIndex = that.getElementIndex(clickedElement);
-
-      if (parentElement.querySelector('.is-active') === null) {
-        referenceIndex = 0;
-      } else {
-        referenceIndex = that.getElementIndex(parentElement.querySelector('.is-active'));
-      }
-
-      if (referenceIndex > clickedIndex) {
-        var temp = clickedIndex;
-        clickedIndex = referenceIndex;
-        referenceIndex = temp;
-      }
-
-      if (e.shiftKey) {
-        for (var i = referenceIndex; i <= clickedIndex; i++) {
-          childElements[i].classList.add('is-active');
-        }
-      }
+    $("#android").click(function(){
+      $(this).addClass("active");
+      $("#files-apps").show();
     });
-  }
-}
 
-FileList.prototype.getElementIndex = function(element) {
-  var index = 0;
+    //click Music, hide others
+    $("#music").click(function(){
+      $(this).addClass("active");
+      $("#applications, #series, #sports, #youtube").removeClass("active");
+      $("#sub-music").show();
+      $("#sub-apps, #files-apps, #sub-series, #files-series, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
+    });
+    $("#international").click(function(){
+      $(this).addClass("active");
+      $("#music-vids").removeClass("active");
+      $("#files-music").show();
+      $("#files-musicvids").hide();
+    });
+    $("#music-vids").click(function(){
+      $(this).addClass("active");
+      $("#international").removeClass("active");
+      $("#files-musicvids").show();
+      $("#files-music").hide();
+    });
 
-  while (element = element.previousElementSibling) {
-    index++;
-  }
+    //click Series, hide others
+    $("#series").click(function(){
+      $(this).addClass("active");
+        $("#music, #applications, #sports, #youtube").removeClass("active");
+      $("#sub-series").show();
+      $("#sub-apps, #files-apps, #sub-music, #files-music, #files-musicvids, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
+    });
 
-  return index;
-}
+    // click Sports, hide others
+    $("#sports").click(function(){
+      $(this).addClass("active");
+      $("#music, #series, #applications, #youtube").removeClass("active");
+      $("#sub-sport").show();
+      $("#sub-apps, #files-apps, #sub-series, #files-series, #sub-music, #files-music, #files-musicvids, #sub-tube, #files-tube").hide();
+    });
+    $("#soccer").click(function(){
+      $("#files-sport").show();
+      $(this).addClass("active");
+    });
 
-function Finder() {
-  this.fileList = new FileList;
-}
+    //click Youtube, hide others
+    $("#youtube").click(function(){
+      $(this).addClass("active");
+      $("#music, #series, #sports, #applications").removeClass("active");
+      $("#sub-tube").show();
+      $("#sub-apps, #files-apps, #sub-series, #files-series, #sub-sport, #files-sport, #sub-music, #files-music, #files-musicvids").hide();
+    });
+    $("#fashion").click(function(){
+      $(this).addClass("active");
+      $("#files-tube").show();
+    });
 
-var finder = new Finder;
+    //remove active when exiting branch
+    $(".category-container li").click(function(){
+      $(".sub-container li").removeClass("active");
+    });
+
+
+});

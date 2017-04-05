@@ -2,10 +2,42 @@
   box-sizing: border-box;
 }
 
+.interactive-intro {
+  margin: 30px;
+}
+
+h1, h2 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #927cbd;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3em;
+}
+
+p {
+  margin-top: 8px;
+}
+
 .container {
-  width: 65%;
-  /*width: 70%*/
-  margin: 0 0 0 1rem;
+  width: 80%;
+  display: flex;
+  margin: 1rem auto;
 }
 
 .finder-window {
@@ -14,11 +46,10 @@
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  /*border: 0.063rem solid #a5a5a5;*/
   border-radius: 2px;
   background-color: #dedede;
   box-shadow: 0 20px 100px 0px #909090;
-  margin: 1rem auto 0 0rem;
+  max-height: 225px;
 }
 
 .finder-header {
@@ -26,11 +57,6 @@
       -ms-flex: 1 100%;
           flex: 1 100%;
   position: relative;
-  /*background: -webkit-linear-gradient(#e4e4e4, #cfcfcf);
-  background: linear-gradient(#e4e4e4, #cfcfcf);*/
-  height: 2rem;
-  /*border-bottom: 1px solid #969696;
-  box-shadow: inset 0 1px 1px 0px #fff;*/
 }
 
 .finder-window-controls {
@@ -71,8 +97,9 @@
 
 .finder-sidebar {
   background-color: #f0f0f0;
-  /*border-right: 1px solid #b8b8b8;*/
   padding: 0 .6rem .4rem .4rem;
+  float: left;
+  height: 100%;
 }
 
 .finder-sidebar__list {
@@ -89,13 +116,13 @@
 .finder-sidebar__sub-list {
   margin: 0;
   padding: 0 0 0 7px;
-  font-size: .6rem;
+  font-size: .5rem;
   line-height: .45rem;
 }
 
 .icon {
-  font-size: 1rem;
-  margin-right: .2rem;
+  font-size: .6rem;
+  margin-right: .1rem;
 }
 
 .finder-sidebar__list-item {
@@ -117,44 +144,67 @@
       -ms-flex: auto;
           flex: auto;
   background-color: #ffffff;
+  height: 100%
+}
+
+.category-container {
+  width: 65px;
+  border-right: 1px solid #e8e8e8;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+  position: relative;
+  height: 100%
+}
+
+.sub-container {
+  min-width: 80px;
+  border-right: 1px solid #e8e8e8;
+}
+
+.files-container {
+  min-width: 110px;
 }
 
 .finder-file-list {
   margin: 0;
-  padding: .4rem .5rem 1rem .3rem;
-  border-right: 1px solid #e8e8e8;
+  padding-left: 0;
 }
 
 .finder-file-item {
   display: block;
   text-decoration: none;
-  padding: 0.1em 0.5em;
+  padding: 0 0.5em;
   cursor: pointer;
-  font-size: .6rem;
+  font-size: .48rem;
   line-height: 1rem;
+  color: #868686;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
-.finder-file-item.is-active {
-  color: #000;
-  background: #dcdcdc;
+.parent:hover {
+    background: #e8e8e8;
 }
 
-.finder-file-list.is-active .finder-file-item.is-active {
-  color: #fff;
-  background: #246bd5;
+.parent {
+    color: #333;
 }
 
-/*.finder-details {
-  -webkit-box-flex: 100%;
-      -ms-flex: 100%;
-          flex: 100%;
-  height: 24px;
-  border-top: 1px solid #a2a2a2;
-  text-align: center;
-  font-size: 0.7em;
-  line-height: 2;
-}*/
+.finder-file-item:active {
+    background: #F0BD53;
+}
+
+.active {
+  background-color: #F0BD53;
+}
+
+.info-window {
+  font-family: "Roboto", sans-serif;
+  font-size: .6rem;
+  margin-left: 1.6vw;
+  width: 150px;
+  line-height: 1.6em;
+}
