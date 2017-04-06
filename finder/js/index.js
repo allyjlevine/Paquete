@@ -1,16 +1,11 @@
 $(document).ready(function(){
     // hide on subcategories and files on load
-    $("#sub-apps").hide();
-    $("#files-apps").hide();
-    $("#sub-music").hide();
-    $("#files-music").hide();
-    $("#files-musicvids").hide();
-    $("#sub-series").hide();
-    $("#files-series").hide();
-    $("#sub-sport").hide();
-    $("#files-sport").hide();
-    $("#sub-tube").hide();
-    $("#files-tube").hide();
+    $("#sub-apps, #files-apps, #apps-info").hide();
+    $("#sub-music, #files-music, #files-musicvids, #music-info").hide();
+    $("#sub-series, #files-series, #series-info").hide();
+    $("#sub-sport, #files-sport, #sports-info").hide();
+    $("#sub-tube, #files-tube, #tube-info").hide();
+
 
 
 
@@ -20,7 +15,7 @@ $(document).ready(function(){
       $(this).addClass("active");
       $("#music, #series, #sports, #youtube").removeClass("active");
       $("#sub-apps").show();
-      $("#sub-music, #files-music, #files-musicvids, #sub-series, #files-series, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
+      $("#intro-info, #sub-music, #files-music, #files-musicvids, #sub-series, #files-series, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
     });
 
     $("#android").click(function(){
@@ -33,7 +28,7 @@ $(document).ready(function(){
       $(this).addClass("active");
       $("#applications, #series, #sports, #youtube").removeClass("active");
       $("#sub-music").show();
-      $("#sub-apps, #files-apps, #sub-series, #files-series, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
+      $("#intro-info, #sub-apps, #files-apps, #sub-series, #files-series, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
     });
     $("#international").click(function(){
       $(this).addClass("active");
@@ -53,7 +48,7 @@ $(document).ready(function(){
       $(this).addClass("active");
         $("#music, #applications, #sports, #youtube").removeClass("active");
       $("#sub-series").show();
-      $("#sub-apps, #files-apps, #sub-music, #files-music, #files-musicvids, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
+      $("#intro-info, #sub-apps, #files-apps, #sub-music, #files-music, #files-musicvids, #sub-sport, #files-sport, #sub-tube, #files-tube").hide();
     });
 
     // click Sports, hide others
@@ -61,7 +56,7 @@ $(document).ready(function(){
       $(this).addClass("active");
       $("#music, #series, #applications, #youtube").removeClass("active");
       $("#sub-sport").show();
-      $("#sub-apps, #files-apps, #sub-series, #files-series, #sub-music, #files-music, #files-musicvids, #sub-tube, #files-tube").hide();
+      $("#intro-info, #sub-apps, #files-apps, #sub-series, #files-series, #sub-music, #files-music, #files-musicvids, #sub-tube, #files-tube").hide();
     });
     $("#soccer").click(function(){
       $("#files-sport").show();
@@ -73,7 +68,7 @@ $(document).ready(function(){
       $(this).addClass("active");
       $("#music, #series, #sports, #applications").removeClass("active");
       $("#sub-tube").show();
-      $("#sub-apps, #files-apps, #sub-series, #files-series, #sub-sport, #files-sport, #sub-music, #files-music, #files-musicvids").hide();
+      $("#intro-info, #sub-apps, #files-apps, #sub-series, #files-series, #sub-sport, #files-sport, #sub-music, #files-music, #files-musicvids").hide();
     });
     $("#fashion").click(function(){
       $(this).addClass("active");
@@ -83,6 +78,34 @@ $(document).ready(function(){
     //remove active when exiting branch
     $(".category-container li").click(function(){
       $(".sub-container li").removeClass("active");
+    });
+
+
+
+    //show and hide info
+    $("#applications").click(function(){
+      $("#apps-info").show();
+      $("#music-info, #series-info, #sports-info, #tube-info").hide();
+    });
+
+    $("#music").click(function(){
+      $("#music-info").show();
+      $("#apps-info, #series-info, #sports-info, #tube-info").hide();
+    });
+
+    $("#series").click(function(){
+      $("#series-info").show();
+      $("#apps-info, #music-info, #sports-info, #tube-info").hide();
+    });
+
+    $("#sports").click(function(){
+      $("#sports-info").show();
+      $("#apps-info, #series-info, #music-info, #tube-info").hide();
+    });
+
+    $("#youtube").click(function(){
+      $("#tube-info").show();
+      $("#apps-info, #series-info, #sports-info, #music-info").hide();
     });
 
 
